@@ -1,1 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+        header,footer{
+             background:darkblue;
+             padding:20px;
+             text-align: center;
+        }
+
+        header a{
+            color:white;
+            background:rgb(52,122,227);
+            padding: 10px;
+            margin:4px;
+            border-radius:10px;
+        }
+
+        .s1{
+            height: 600px;
+            background-image:
+            linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+            url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bGFwdG9wJTIwY29kZXxlbnwwfHwwfHx8MA%3D%3D");
+            background-size: 100% 100%;
+            color:White;
+            text-align:center;
+            padding-top:200px;
+        }
+        .s2{
+            height: 550px;
+            padding: 100px;
+            background: whitesmoke;
+            text-align: center;
+        }
+        .s2>div>div{
+            display:inline-block;
+            padding:90px;
+            margin:10px;
+            width:20%;
+            color:white;
+            border-radius: 10px;
+
+        }
+
+        .s3{
+            height: 50px;
+            padding: 100px;
+            background: whitesmoke;
+            text-align: center;
+        }
+        .s3>div>div{
+            display:inline-block;
+            padding: 50px;
+            margin:10px;
+            width:30%;
+            color:black;
+            border:2px solid blue;
+            border-radius: 20px;
+
+        }
+        .s3 h3{
+            color:blue;
+        }
+
+        .card:hover{
+            transform:translate(0px,-10px);
+        }
+
+        .s4{
+        width:60%;
+        margin:auto;
+        padding-top:200px;
+        height:500px;
+    }
+    .s4 p{
+        background:lightblue;
+        padding:10px;
+        margin:5px;
+    }
+    </style>
+       
+    
+</head>
+<body>
+   <header>
+    <a href="">Home</a>
+    <a href="">About</a>
+    <a href="">Services</a>
+    <a href="">Contact</a>
+   </header>
+   
+   <section class="s1">
+       <h1>Learn CSS Through Projecs</h1>
+       <p>This project demonstrates CSS colors,Backgrounds, Flexbox,Box Model,Typography,Shadows and Responsive Design in one morden Webpage.</p>
+   </section>
+
+   <section class="s2">
+      <h1>CSS colors</h1>
+      <div>
+         <div style="background:red;">Red</div>
+         <div style="background:green;">Green</div>
+         <div style="background:blue;">Blue</div>
+         <div style="background:violet;">Violet</div>
+      </div>
+   </section>
+   <section class="s3">
+    <h1>CSS Box Model</h1> <br>
+    <div>
+        <div class="card">
+            <h3>Card One </h3><br>
+            <p>Padding craetes space inside the element. Border surrounds the content.</p>
+        </div>
+        <div class="card">
+            <h3>Card Two </h3><br>
+            <p>This card demonstrates width,border-radius, box-shadow,margin,and padding in CSS.</p>
+        </div>
+        <div class="card">
+            <h3>Card Three </h3><br>
+            <p>Hover over this card to see smooth animation using CSS transistions.</p>
+        </div>
+    </div>
+   </section>
+
+   <section class="s4">
+    <h1>CSS Fonts</h1>
+    <div>
+        <p style="font-weight: 300;">Light Font Weight(300)</p>
+        <p style="font-weight: 400;">Normal Font Weight(400)</p>
+        <p style="font-weight: 900;">Bold Font Weight(900)</p>
+        <p> This paragraph demonstrates font-family,font-size,letter-spacing,line-height,and font-weight properties.</p>
+    </div>
+   </section>
+
+    <footer>
+        © 2026 CSS Learning Project | Designed for Frontend Practice
+    </footer>
+</body>
+</html>
