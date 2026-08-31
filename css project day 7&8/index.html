@@ -1,327 +1,196 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer" />     
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced To-Do App</title>
+
     <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-        }
-        header,footer{
-            background:black;
-            color:white;
-            padding:4%;
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            position:sticky;
-            top:0;
-            z-index:5;
-        }
-        header span{
-            border: 3px solid green;
-            font-size: 1.3rem;
-            padding:6px;
-            color:green;
-        }
-        header a{
-            color:white;
-            padding:10px;
-            text-decoration: none;
-        }
-        header a:hover{
-            color:rgb(58, 216, 58);
-            transition:all 0.5s;
-            border-bottom:1px solid green;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial;
+      }
 
+      body {
+        background: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
 
-        .s1{
-            background:black;
-            color:white;
-            display:flex;
-            align-items:center;
-            padding:4%;
-            font-size:1.4rem;
-            line-height: 1.3;
-        }
-        .s1>div{
-            flex-basis:50%;
-        }
-        .s1 img{
-            width:100%;
-            height:100%;
-        }
-        .s1 p{
-            color:lightslategrey;
-        }
-        button{
-            padding:20px;
-            margin:5px;
-            transition:all 0.5s;
-        }
-        button:hover{
-            transform:translate(0,-10px)
-        }
-        .btn1{
-            background:rgb(50, 251, 50);
-            color:black;
-            border:none;
-        }
-        .btn2{
-            background:transparent;
-            border:1px solid green;
-            color:white;
-        }
+      .container {
+        width: 450px;
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
 
-        .s2{
-            background:black;
-            color:white;
-            padding:3%;
-        }
-        .s2 div{
-            height:100vh;
-            background:rgb(61, 57, 57);
-            display:flex;
-            justify-content:center;
-            align-items:center;
-        }
-        .s2 h1{
-            background:rgb(35, 172, 49);
-            padding:10px;
-        }
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
 
-        .s3{
-            background:black;
-            color:white;
-            text-align:center;
-		line-height:2;
-		padding:5%;
-        }
-        .s3 .container{
-            display:flex;
-		gap:10px;
-        }
-        .s3 .card{
-            height:50vh;
-	    padding:100px 20px;
-	    background:rgb(23, 23, 23);
-        border:1px solid black;
-        }
-       .s3 i{
-	font-size:4rem;
-        color:green;
-	}
-    .s3 .card:hover{
-        transform:translate(0,-10px);
-        border:2px solid green;
-        transistion:all 0.5s;
-    }
-    
-    .s4{
-        background:black;
-        padding:5%;
-        color:white;
-        text-align:center;
-    }
-    
-    .parent{
-        display:flex;
-        gap:20px;
-        line-height:1.4;
-    }
-    .parent img{
-        width:100%;
-        height:400px;
-    }
+      .input-box {
+        display: flex;
+        gap: 10px;
+      }
 
-    .s5{
-      background:black;
-      color:white;
-      padding: 5%;
-      text-align:center;
+      input {
+        flex: 1;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        outline: none;
+      }
 
-    }
-    th{
-        background: green;
-    }
-    td{
-        background: black   ;
-        color:white   ; 
-    }
-    
-    .s6{
+      button {
+        padding: 12px 20px;
+        border: none;
         background: black;
-        color:white;
-        display:flex;
-        padding:5%;
-    }
-    .s6>div{
-        flex-basis:50%;
-        line-height:1.6;
-    }
-    li::marker{
-        color:green;
-    }
-    .s6 h1{
-        text-decoration: 6px solid underline green;;
-    }
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+      }
 
-@media screen and (width<576px){
-    html{
-        font-size:10px;
-    }
-    .s1{
-        flex-direction:column;
-    }
-    .s3 .container{
-        flex-direction:column;
-    }
-    .parent{
-        flex-direction:column;
-    }
-}
+      button:hover {
+        background: #333;
+      }
+
+      .task {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #f9f9f9;
+        padding: 12px;
+        margin-top: 15px;
+        border-radius: 5px;
+      }
+
+      .delete-btn {
+        background: red;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial;
+      }
+
+      body {
+        background: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .container {
+        width: 450px;
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .input-box {
+        display: flex;
+        gap: 10px;
+      }
+
+      input {
+        flex: 1;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        outline: none;
+      }
+
+      button {
+        padding: 12px 20px;
+        border: none;
+        background: black;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: #333;
+      }
+
+      .task {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #f9f9f9;
+        padding: 12px;
+        margin-top: 15px;
+        border-radius: 5px;
+      }
+
+      .delete-btn {
+        background: red;
+      }
     </style>
-</head>
-<body>
-    <header>
-        <h1><span>JD</span> John Doe</h1>
-        <nav>
-            <a href="" style="color:rgb(69, 235, 69)">About</a>
-            <a href="">Achievements</a>
-            <a href="">Education</a>
-            <a href="">Projects</a>
-            <a href="">Contact</a>
-        </nav>
-    </header>
+  </head>
 
-    <section class="s1">
-        <div>
-            <h1>Hi, I'm <span style="color:rgb(69, 251, 69)">John Doe</span></h1>
-            <h1>I build simple and clean websites.</h1>
-            <p>I am a web development student who loves turning ideas into real, working web pages.</p>
-            <button class="btn1">view projects</button>
-            <button class="btn2">Download cv</button>
-        </div>
-        <div>
-            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="">
-        </div>
-    </section>
-    
+  <body>
 
-    <section class="s2">
-        <div>
-            <h1>FullStack Dev</h1>
-        </div>
-    </section>
+    <div class="container">
+      <h1>To-Do App</h1>
+      <div class="input-box">
+        <input type="text" id="inp1" placeholder="enter task" >
+        <button onclick="addtask()">Add</button>
+      </div>
+      <div id="tasklist">
 
-    <section class='s3'>
-        <h1>What I Do</h1>
-        <div class="container">
-            <div class="card">
-                 <i class="fa-solid fa-desktop"></i>
-                <h4>Web Design</h4>
-                <p>Design clean and attractive websites that provide great user experience.</p>
-            </div>
-            <div class="card">
-                <i class="fa-solid fa-code"></i>
-                <h4>Web Design</h4>
-                <p>Design clean and attractive websites that provide great user experience.</p>
-            </div>
-                        <div class="card">
-                 <i class="fa-solid fa-desktop"></i>
-                <h4>Web Design</h4>
-                <p>Design clean and attractive websites that provide great user experience.</p>
-            </div>
-            <div class="card">
-                <i class="fa-solid fa-code"></i>
-                <h4>Web Design</h4>
-                <p>Design clean and attractive websites that provide great user experience.</p>
-            </div>
-        </div>
-    </section>
+      </div>
+    </div>
+    <script>
+        let tasks= JSON.parse(localStorage.getItem('pfs4tasks')) || []
+        display()
+        function addtask(){
+            let inp=document.getElementById('inp1')
+            if(inp.value==''){
+                alert('enter value first')
+                return
+            }
+            tasks.push(inp.value)
+            localStorage.setItem('pfs4tasks',JSON.stringify(tasks))
+            console.log(tasks)
 
-    <section class="s4">
-        <h1>My Projects</h1>
-        <div class="parent">
-            <div class="item">
-                <div><img src="https://img.magnific.com/free-photo/computer-program-coding-screen_53876-138060.jpg?semt=ais_hybrid&w=740&q=80"></div>
-                <h1>Portfolio Website</h1>
-                <p> A personal Portfolio website built using HTML to showcase my skills and performance</p>
-                <button class="btn2">View Details</button>
-            </div>
+            display()
+        }
 
-             <div class="item">
-                <div><img src="https://img.magnific.com/free-photo/student-loan-application-form-registration-concept_53876-133922.jpg?semt=ais_hybrid&w=740&q=80"></div>
-                <h1>Student Registration Form</h1>
-                <p> A personal Portfolio website built using HTML to showcase my skills and performance</p>
-                <button class="btn2">View Details</button>
-            </div>
+        function display(){
+            let tasklist=document.getElementById('tasklist')
+            tasklist.innerHTML=tasks.map((val,ind)=>{
+                return `
+                <div class='task'>
+                <h3>${val}</h3>
+                <button onclick='deletetask(${ind})' class='delete-btn'>del</button>  
+                </div>  
+                    `
 
-             <div class="item">
-                <div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWaC0eYsKYasIAdKgmghicSm4Hy-knP30drXu2R2Mx-g&s=10"></div>
-                <h1>Simple calculator</h1>
-                <p> A personal Portfolio website built using HTML to showcase my skills and performance</p>
-                <button class="btn2">View Details</button>
-            </div>
-        </div>
-    </section>
+            }).join('')
+        }
 
-    <section class="s5">
-    <h1>Education</h1>
-  <table border="1"  width="100%" height="200px">
-    <tr>
-        <th>Qualification</th>
-        <th>Institution</th>
-        <th>Year</th>
-        <th>Location</th>
-    </tr>
-
-    <tr>
-        <td>High School</td>
-        <td>XYZ High School</td>
-        <td>2018-2020</td>
-        <td>New York, USA</td>
-    </tr>
-
-    <tr>
-        <td>Bachelor Of Computer SCience</td>
-        <td>XYZ University</td>
-        <td>2022-2026</td>
-        <td>New York,USA</td>
-    </tr>
-  </table></section>
-     <section class="s6">
-        <div>
-            <h1>Achievements</h1>
-            <ul>
-                <li>Completed HTML & CSS fundamentals course</li>
-                <li>Completed HTML & CSS fundamentals course</li>
-                <li>Completed HTML & CSS fundamentals course</li>
-                <li>Completed HTML & CSS fundamentals course</li>
-            </ul>
-        </div>
-        <div>
-            <h1>Contact</h1>
-            <ul>
-                <li>Email:johndoe@example.com</li>
-                <li>phone: +123 456 7890</li>
-                <li>Website: www.johndoe.com</li>
-                <li>Location: New Yprk.USA</li>
-            </ul>
-        </div>
-     </section>   
-     <footer>
-        <p> 2024 John Doe. All Rights Reserved.</p>
-        <div>
-            <i class="fa-brands fa-github"></i>
-            <i class="fa-brands fa-linkedin"></i>
-            <i class="fa-brands fa-twitter"></i>
-        </div>
-     </footer>
-</body>
+        function deletetask(delitem){
+            tasks=tasks.filter((val,ind)=>{
+                return ind!==delitem
+            })
+            localStorage.setItem('pfs4tasks',JSON.stringify(tasks))
+            display()
+        }
+    </script>
+  </body>
 </html>
